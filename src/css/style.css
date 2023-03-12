@@ -47,7 +47,7 @@ main{
   background-color: white;
   border-radius: 15px;
   text-align: justify;
-  font-size: clamp(8px, 5vh, 25px);
+  font-size: clamp(8px, 18px, 25px);
 }
 .perguntas {
   height: 41vh;
