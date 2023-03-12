@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --black: black;
+  --maron: #ac6631;
+}
+
+.black-bg {
+  background-color: rgb(22, 20, 20);
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+.topo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--maron);
+  height: 7vh;
+  width: 100%;
+  color: white;
+}
+.numero-perguntas {
+  position: absolute;
+  right: 10%;
+  font-size: 15px;
+}
+.quadro-perguntas {
+  padding: 20px;
+  height: 80%;
+  width: 89%;
+  background-color: white;
+  border-radius: 15px;
+  text-align: justify;
+  font-size: clamp(8px, 5vh, 25px);
+}
+.perguntas {
+  height: 41vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alternativas {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.status {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--maron);
+}
+
+.botao-alternativas {
+  margin: 4% 5% 3% 5%;
+  height: 15%;
+  width: 89%;
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 5px gray;
+  cursor: pointer;
+  font-size: clamp(8px, 5vh, 25px);
+}
+.botao-status {
+  height: 80%;
+  cursor: pointer;
+}
+.status :nth-child(1) {
+  margin-left: 5%;
+  height: 90%;
+}
+.status :nth-child(2) {
+  height: 90%;
+}
+.status :nth-child(3) {
+  height: 90%;
+  margin-right: 5%;
+}
+.fim-jogo {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(52, 52, 50, 1);
+  opacity: 0;
+  visibility: hidden;
+}
+.aberto {
+  opacity: 1;
+  visibility: visible;
+}
+.nota-final {
+  height: 41vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.nota-final h2,
+.pontuacao-final h2 {
+  color: white;
+  font-size: 50px;
+}
+.nota-final p {
+  color: white;
+  font-size: 45px;
+}
+.barra-nota-final {
+  background-color: rgba(52, 52, 50, 1);
+  height: 15%;
+  width: 90%;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+.barra-de-nota {
+  background-color: green;
+  height: 100%;
+  width: 0%;
+  border-radius: 20px;
+}
+.pontuacao-final {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.content {
+  height: 27vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--maron);
+}
+.content a{
+    height: 80%;
+}
+.botao-content{
+    height: 55%;
+    width: 90%;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Game Quiz</title>
+</head>
+
+<body>
+    <main class="black-bg">
+        <header class="topo">
+            <h1>Historia</h1>
+            <p class="numero-perguntas">0</p>
+        </header>
+        <div class="perguntas">
+            <div class="quadro-perguntas">
+                <p class="texto-perguntas"></p>
+            </div>
+        </div>
+        <div class="alternativas">
+            <button id="alternativa-A" class="botao-alternativas"></button>
+            <button id="alternativa-B" class="botao-alternativas"></button>
+            <button id="alternativa-C" class="botao-alternativas"></button>
+            <button id="alternativa-D" class="botao-alternativas"></button>
+        </div>
+        <div class="status">
+            <a href=""><img id="botao-voltar" class="botao-status" src="./src/img/cancelar.svg"></img></a>
+            <a href=""><img id="botao-reiniciar" class="botao-status" src="./src/img/reiniciar.svg"></img></a>
+            <img id="botao-avancar" class="botao-status" src="./src/img/avancar.png"></img>
+        </div>
+        <div class="fim-jogo">
+            <div class="topo">
+                <h2>Historia</h2>
+            </div>
+            <div class="nota-final">
+                <h2>Parabens!!</h2>
+                <p>voce acertou</p>
+            </div>
+            <div class="pontuacao-final">
+                <h2 class="pontos-porcentagem">100</h2>
+                <div class="barra-nota-final">
+                    <div class="barra-de-nota"></div>
+                </div>
+            </div>
+            <div class="content">
+                <a href=""><img id="botao-voltar" class="botao-content" src="./src/img/cancelar.svg"></img></a>
+                <a href=""><img id="botao-reiniciar" class="botao-content" src="./src/img/reiniciar.svg"></img></a>
+            </div>
+        </div>
+    </main>
+    <script src="./src/js/index.js" defer></script>
+</body>
+
+</html>
