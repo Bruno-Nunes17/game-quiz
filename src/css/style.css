@@ -9,6 +9,15 @@
   --black: black;
   --maron: #ac6631;
 }
+.align-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+  width: 912px;
+  overflow: hidden;
+}
 
 .black-bg {
   background-color: rgb(22, 20, 20);
@@ -62,7 +71,7 @@
 }
 
 .botao-alternativas {
-  margin: 4% 5% 3% 5%;
+  margin: 3% 5% 3% 5%;
   height: 15%;
   width: 89%;
   background-color: white;
@@ -150,4 +159,19 @@
 .botao-content{
     height: 55%;
     width: 90%;
+}
+@media (max-height: 720px) and (orientation: landscape)
+{
+  .botao-alternativas {
+    margin: 1% 5% 1% 5%;
+    height: 15%;
+    width: 89%;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px gray;
+    cursor: pointer;
+    font-size: clamp(8px, 5vh, 25px);
+  }
+  
 }
