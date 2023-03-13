@@ -8,8 +8,8 @@ const botaoVoltar = document.querySelector("#botao-voltar");
 const botaoReinicar = document.querySelector("#botao-reiniciar");
 const botaoAvancar = document.querySelector("#botao-avancar");
 const telaFimDeJogo = document.querySelector(".fim-jogo");
-const pontosPorcentagem = document.querySelector('.pontos-porcentagem')
-const barraDeNota = document.querySelector('.barra-de-nota')
+const pontosPorcentagem = document.querySelector(".pontos-porcentagem");
+const barraDeNota = document.querySelector(".barra-de-nota");
 
 let indice = 0;
 let pontuacao = 0;
@@ -85,30 +85,35 @@ function mudaPergunta() {
   let respondidas = indice;
   if (respondidas == totalDePerguntas) {
     atribuirNota();
-    telaFimDeJogo.classList.add("aberto")
+    telaFimDeJogo.classList.add("aberto");
   } else {
     numeroDePerguntas();
     mostraPerguntas();
   }
 }
-function atribuirNota (){
-    pontosPorcentagem.textContent = `${notaFinal}%`;
-    barraDeNota.style.width = `${notaFinal}%`;
+function atribuirNota() {
+  pontosPorcentagem.textContent = `${notaFinal}%`;
+  barraDeNota.style.width = `${notaFinal}%`;
 }
-botaoRespostaA.addEventListener("click", () => {
-  let pergunta = armazenaPerguntas();
-  let btnRespostaA = pergunta[indice].respostaA;
-  let resposta = pergunta[indice].correta;
-  if (btnRespostaA === resposta) {
-    botaoRespostaA.style.background = "green";
-    trocaIndice();
-    Pontuacao();
-  } else {
-    botaoRespostaA.style.background = "red";
-    trocaIndice();
+function respostaA() {
+  if (!fimDeJogo) {
+    let pergunta = armazenaPerguntas();
+    let btnRespostaA = pergunta[indice].respostaA;
+    let resposta = pergunta[indice].correta;
+    if (btnRespostaA === resposta) {
+      botaoRespostaA.style.background = "green";
+      trocaIndice();
+      Pontuacao();
+      fimDeJogo = true;
+    } else {
+      botaoRespostaA.style.background = "red";
+      trocaIndice();
+      fimDeJogo = true;
+    }
   }
-});
-botaoRespostaB.addEventListener("click", () => {
+}
+function respostaB() {
+  if(!fimDeJogo){
   let pergunta = armazenaPerguntas();
   let btnRespostaB = pergunta[indice].respostaB;
   let resposta = pergunta[indice].correta;
@@ -116,12 +121,16 @@ botaoRespostaB.addEventListener("click", () => {
     botaoRespostaB.style.background = "green";
     trocaIndice();
     Pontuacao();
+    fimDeJogo = true;
   } else {
     botaoRespostaB.style.background = "red";
     trocaIndice();
+    fimDeJogo = true;
   }
-});
-botaoRespostaC.addEventListener("click", () => {
+}
+}
+function respostaC() {
+  if(!fimDeJogo){
   let pergunta = armazenaPerguntas();
   let btnRespostaC = pergunta[indice].respostaC;
   let resposta = pergunta[indice].correta;
@@ -129,12 +138,16 @@ botaoRespostaC.addEventListener("click", () => {
     botaoRespostaC.style.background = "green";
     trocaIndice();
     Pontuacao();
+    fimDeJogo = true;
   } else {
     botaoRespostaC.style.background = "red";
     trocaIndice();
+    fimDeJogo = true;
   }
-});
-botaoRespostaD.addEventListener("click", () => {
+}
+}
+function respostaD() {
+  if(!fimDeJogo){
   let pergunta = armazenaPerguntas();
   let btnRespostaD = pergunta[indice].respostaD;
   let resposta = pergunta[indice].correta;
@@ -142,16 +155,31 @@ botaoRespostaD.addEventListener("click", () => {
     botaoRespostaD.style.background = "green";
     trocaIndice();
     Pontuacao();
+    fimDeJogo = true;
   } else {
     botaoRespostaD.style.background = "red";
     trocaIndice();
+    fimDeJogo = true;
   }
+}
+}
+botaoRespostaA.addEventListener("click", () => {
+  respostaA();
+});
+botaoRespostaB.addEventListener("click", () => {
+  respostaB();
+});
+botaoRespostaC.addEventListener("click", () => {
+  respostaC();
+});
+botaoRespostaD.addEventListener("click", () => {
+  respostaD();
 });
 botaoAvancar.addEventListener("click", () => {
   mudaPergunta();
   calculaPontuação();
   atribuirNota();
+  fimDeJogo = false;
 });
 numeroDePerguntas();
 mostraPerguntas();
-
