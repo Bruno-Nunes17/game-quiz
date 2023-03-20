@@ -1,3 +1,4 @@
+function gameQuiz(){
 const textoPerguntas = document.querySelector(".texto-perguntas");
 const numeroPerguntas = document.querySelector(".numero-perguntas");
 const botaoRespostaA = document.querySelector("#alternativa-A");
@@ -20,28 +21,44 @@ let notaFinal = 0;
 function armazenaPerguntas() {
   const perguntas = [
     {
-      pergunta: "Qual é a capital do Brasil?",
-      respostaA: "Rio de Janeiro",
-      respostaB: "Brasília",
-      respostaC: "São Paulo",
-      respostaD: "Belo Horizonte",
-      correta: "Brasília",
+      pergunta: "Em que ano a lei 10.639 foi promulgada?",
+      respostaA: "2005",
+      respostaB: "2008",
+      respostaC: "2003",
+      respostaD: "2015",
+      correta: "2008",
     },
     {
-      pergunta: "Quem pintou a Mona Lisa?",
-      respostaA: "Leonardo da Vinci",
-      respostaB: "Pablo Picasso",
-      respostaC: "Vincent van Gogh",
-      respostaD: "Michelangelo",
-      correta: "Leonardo da Vinci",
+      pergunta: "Qual é o principal objetivo da lei 10.639?",
+      respostaA: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e africana na educação básica do pai.",
+      respostaB: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira apenas no Ensino Fundamental.",
+      respostaC: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e Africana e Indígena apenas no Ensino Médio.",
+      respostaD: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e africana apenas no Ensino Superior.",
+      correta: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e africana na educação básica do pai.",
     },
     {
-      pergunta: "Quantos elementos químicos existem atualmente?",
-      respostaA: "118",
-      respostaB: "92",
-      respostaC: "101",
-      respostaD: "124",
-      correta: "118",
+      pergunta: "A lei 10.639, também inclui no calendário escolar uma data muito importante no Brasil, que data é essa e o que se comemora nesse dia?",
+      respostaA: "13 de maio, abolição da escravidão.",
+      respostaB: "20 de novembro – Dia da Consciência Negra.",
+      respostaC: "15 de novembro – Proclamação da República.",
+      respostaD: "25 de maio – Dia Internacional da África.",
+      correta: "20 de novembro – Dia da Consciência Negra.",
+    },
+    {
+      pergunta: "O Dia da Consciência está relacionado a luta de qual personagem da história brasileira?",
+      respostaA: "João Cândido",
+      respostaB: "Maria Filipa",
+      respostaC: "Carolina Maria de Jesus",
+      respostaD: "Zumbi dos Palmares",
+      correta: "Zumbi dos Palmares",
+    },
+    {
+      pergunta: "A criação da lei 10.639, foi fruto da luta?",
+      respostaA: "Movimento Negro",
+      respostaB: "Movimento feminista",
+      respostaC: "Movimento abolicionista",
+      respostaD: "Movimento ambientalista",
+      correta: "Movimento Negro",
     },
   ];
   totalDePerguntas = perguntas.length;
@@ -183,3 +200,5 @@ botaoAvancar.addEventListener("click", () => {
 });
 numeroDePerguntas();
 mostraPerguntas();
+}
+gameQuiz();

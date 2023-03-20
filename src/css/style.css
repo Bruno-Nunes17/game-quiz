@@ -48,6 +48,7 @@ main{
   border-radius: 15px;
   text-align: justify;
   font-size: clamp(8px, 18px, 25px);
+  box-shadow: 0 5px rgba(128, 128, 128, 0.377);
 }
 .perguntas {
   height: 41vh;
@@ -72,14 +73,16 @@ main{
 
 .botao-alternativas {
   margin: 3% 5% 3% 5%;
-  height: 15%;
+  padding: 1%;
+  height: 18%;
   width: 89%;
   background-color: white;
   border-radius: 15px;
-  border: none;
-  box-shadow: 0 5px gray;
+  border: 2px solid rgba(128, 128, 128, 0.466);
+  box-shadow: 0 5px rgba(128, 128, 128, 0.377);
   cursor: pointer;
-  font-size: clamp(8px, 5vh, 25px);
+  font-size: clamp(10px, 12px, 25px);
+  font-weight: 600;
 }
 .botao-status {
   height: 80%;
@@ -164,14 +167,15 @@ main{
 {
   .botao-alternativas {
     margin: 1% 5% 1% 5%;
-    height: 15%;
+    padding: 0;
+    height: 18%;
     width: 89%;
     background-color: white;
     border-radius: 15px;
     border: none;
-    box-shadow: 0 5px gray;
     cursor: pointer;
-    font-size: clamp(8px, 5vh, 25px);
+    font-size: clamp(8px, 18px, 25px);
+    font-weight: normal;
   }
   
 }
