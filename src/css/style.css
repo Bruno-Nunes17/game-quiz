@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +18,11 @@
 }
 main{
   width: 912px;
-  overflow: hidden;
+  margin: 0 auto;
+}
+.jogo{
+  max-width: 912px;
+  margin: 0 auto;
 }
 
 .black-bg {
@@ -39,6 +45,16 @@ main{
   position: absolute;
   right: 10%;
   font-size: 15px;
+}
+.topo a{
+  position: absolute;
+  margin-top: 5px;
+  left: 4%;
+  font-size: 15px;
+}
+#botao-voltar{
+  width: 30px;
+  height: 30px;
 }
 .quadro-perguntas {
   padding: 20px;
@@ -67,7 +83,7 @@ main{
   height: 7vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: var(--maron);
 }
 
@@ -85,18 +101,17 @@ main{
   font-weight: 600;
 }
 .botao-status {
-  height: 80%;
   cursor: pointer;
 }
 .status :nth-child(1) {
   margin-left: 5%;
-  height: 90%;
+  height: 87%;
 }
 .status :nth-child(2) {
-  height: 90%;
+  height: 93%;
 }
 .status :nth-child(3) {
-  height: 90%;
+  height: 80%;
   margin-right: 5%;
 }
 .fim-jogo {
