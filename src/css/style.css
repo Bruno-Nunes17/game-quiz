@@ -17,11 +17,11 @@
   justify-content: center;
 }
 main{
-  width: 912px;
+  max-width: 912px;
   margin: 0 auto;
 }
 .jogo{
-  max-width: 912px;
+  width: 912px;
   margin: 0 auto;
 }
 
