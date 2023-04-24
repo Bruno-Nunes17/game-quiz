@@ -124,6 +124,39 @@ main{
   opacity: 0;
   visibility: hidden;
 }
+.imagens-quiz{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.img-pergunta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 92%;
+  width: 95%;
+  background-color: aquamarine;
+  border-radius: 15px;
+}
+.botao-fechar{
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 40px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+}
 .aberto {
   opacity: 1;
   visibility: visible;
@@ -193,4 +226,8 @@ main{
     font-weight: normal;
   }
   
+}
+.img-quiz{
+  aspect-ratio: 1 / 1;
+  width: 90%;
 }

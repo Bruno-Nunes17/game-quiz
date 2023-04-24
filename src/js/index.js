@@ -1,4 +1,7 @@
 function gameQuiz(){
+const botaoFechar = document.querySelector('.botao-fechar');
+const imagensQuiz = document.querySelector('.imagens-quiz');
+const botaoImagen = document.querySelector('#botao-img');
 const textoPerguntas = document.querySelector(".texto-perguntas");
 const numeroPerguntas = document.querySelector(".numero-perguntas");
 const botaoRespostaA = document.querySelector("#alternativa-A");
@@ -11,6 +14,7 @@ const botaoAvancar = document.querySelector("#botao-avancar");
 const telaFimDeJogo = document.querySelector(".fim-jogo");
 const pontosPorcentagem = document.querySelector(".pontos-porcentagem");
 const barraDeNota = document.querySelector(".barra-de-nota");
+const imagen = document.querySelector('.img-quiz');
 
 let indice = 0;
 let pontuacao = 0;
@@ -18,6 +22,9 @@ let totalDePerguntas;
 let fimDeJogo = false;
 let notaFinal = 0;
 
+function mostraImagen (){
+imagensQuiz.classList.toggle('aberto');
+}
 function armazenaPerguntas() {
   const perguntas = [
     {
@@ -27,6 +34,7 @@ function armazenaPerguntas() {
       respostaC: "2003",
       respostaD: "2015",
       correta: "2003",
+      foto: "../src/img/questao-1.jpeg",
     },
     {
       pergunta: "Qual é o principal objetivo da lei 10.639?",
@@ -35,6 +43,7 @@ function armazenaPerguntas() {
       respostaC: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e Africana e Indígena apenas no Ensino Médio.",
       respostaD: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e africana apenas no Ensino Superior.",
       correta: "Tornar obrigatório o ensino de História e Cultura Afro-brasileira e africana na educação básica do pai.",
+      foto: "../src/img/questao-2.jpeg",
     },
     {
       pergunta: "A lei 10.639, também inclui no calendário escolar uma data muito importante no Brasil, que data é essa e o que se comemora nesse dia?",
@@ -43,6 +52,7 @@ function armazenaPerguntas() {
       respostaC: "15 de novembro – Proclamação da República.",
       respostaD: "25 de maio – Dia Internacional da África.",
       correta: "20 de novembro – Dia da Consciência Negra.",
+      foto: "../src/img/questao-3.jpg",
     },
     {
       pergunta: "O Dia da Consciência está relacionado a luta de qual personagem da história brasileira?",
@@ -51,6 +61,7 @@ function armazenaPerguntas() {
       respostaC: "Carolina Maria de Jesus",
       respostaD: "Zumbi dos Palmares",
       correta: "Zumbi dos Palmares",
+      foto: "../src/img/questao-4.jpg",
     },
     {
       pergunta: "A criação da lei 10.639, foi fruto da luta?",
@@ -59,6 +70,7 @@ function armazenaPerguntas() {
       respostaC: "Movimento abolicionista",
       respostaD: "Movimento ambientalista",
       correta: "Movimento Negro",
+      foto: "../src/img/questao-5.jpeg",
     },
     {
       pergunta: "Em 2008 a lei 10.639, foi alterada por outra lei, a 11.645, incluindo, também como obrigatória o ensino de história cultura na educação básica dos povos:",
@@ -67,6 +79,7 @@ function armazenaPerguntas() {
       respostaC: "Negros",
       respostaD: "Indígenas",
       correta: "Indígenas",
+      foto: "../src/img/questao-6.jpeg",
     },
     {
       pergunta: "Como importância da lei 10.639/2003, podemos destacar:",
@@ -75,6 +88,7 @@ function armazenaPerguntas() {
       respostaC: "Combate ao racismo através da educação.",
       respostaD: "Estudar na educação básica temas da história negra apenas na perspectiva nacional.",
       correta: "Combate ao racismo através da educação.",
+      foto: "../src/img/questao-7.jpeg",
     },
     {
       pergunta: "Através da lei 10.639, o estudo sobre a África passou a ter novos olhares, levando em consideração os seguintes aspectos: ",
@@ -83,6 +97,7 @@ function armazenaPerguntas() {
       respostaC: "Primitiva, faminta, homogênea e com guerras.",
       respostaD: "Exótica, clima hostil e não civilizada.",
       correta: "A existência de uma rica história e uma cultura diversificada.",
+      foto: "../src/img/questao-8.jpeg",
     },
     {
       pergunta: "Com a lei 10.639, novas perspectivas acerca do ensino de História e Cultura Afro-brasileira e Africana, foram inseridas nos currículos da Educação Básica do país, permitindo:",
@@ -91,6 +106,7 @@ function armazenaPerguntas() {
       respostaC: "Compreender os negros e negras como sujeitos históricos construtores de sua própria história.",
       respostaD: "A omissão do protagonismo negro, bem como a ideia de empoderamento das mulheres negras.",
       correta: "Compreender os negros e negras como sujeitos históricos construtores de sua própria história.",
+      foto: "../src/img/questao-9.jpeg",
     },
     {
       pergunta: "O Colégio Estadual Professor Edgard Santos (CEPES), localizado na cidade de Governador Mangabeira, faz parte de uma região da Bahia em que o estudo da sua história atende o objetivos da lei 10.639. Essa região é conhecida como:",
@@ -99,6 +115,7 @@ function armazenaPerguntas() {
       respostaC: "Recôncavo",
       respostaD: "Litoral",
       correta: "Recôncavo",
+      foto: "../src/img/questao-1.jpeg",
     },
   ];
   totalDePerguntas = perguntas.length;
@@ -114,12 +131,14 @@ function Pontuacao() {
 }
 function mostraPerguntas() {
   let perguntas = armazenaPerguntas();
+  let imagens = perguntas[indice].foto;
 
   textoPerguntas.textContent = perguntas[indice].pergunta;
   botaoRespostaA.textContent = perguntas[indice].respostaA;
   botaoRespostaB.textContent = perguntas[indice].respostaB;
   botaoRespostaC.textContent = perguntas[indice].respostaC;
   botaoRespostaD.textContent = perguntas[indice].respostaD;
+  imagen.setAttribute("src", imagens);
   botaoRespostaA.style.background = "white";
   botaoRespostaB.style.background = "white";
   botaoRespostaC.style.background = "white";
@@ -237,6 +256,12 @@ botaoAvancar.addEventListener("click", () => {
   calculaPontuação();
   atribuirNota();
   fimDeJogo = false;
+});
+botaoFechar.addEventListener('click', ()=>{
+  mostraImagen();
+});
+botaoImagen.addEventListener('click', ()=>{
+  mostraImagen();
 });
 numeroDePerguntas();
 mostraPerguntas();
